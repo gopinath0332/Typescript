@@ -1,0 +1,9 @@
+{
+    "compileOnSave": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "app.js",
+    "sourceMap": true
+}
