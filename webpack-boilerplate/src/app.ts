@@ -1,3 +1,4 @@
+import * as $ from "jquery";
 import greeting from "./greeter";
 
-document.body.innerHTML = greeting;
+$("#target").html(greeting);

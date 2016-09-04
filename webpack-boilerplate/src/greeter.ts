@@ -1,2 +1,2 @@
-const greeting: string = "Hello there. This is typescript and webpack boilderplate!!!!!";
+const greeting: string = " Typescript + Webpack boilderplate!!!!!";
 export default greeting;
