@@ -16,5 +16,8 @@
     "typescript": "^1.8.10",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "devDependencies": {
+    "typings": "^1.3.3"
   }
 }
