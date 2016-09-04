@@ -15,10 +15,6 @@ var server = new webpackDevServer(compiler, {
     inline: true,
     progress: true,
     publicPath: "/build/",
-    watchOptions: {
-        aggregateTimeout: 300,
-        poll: 1000
-    },
     stats: 'errors-only'
 });
 
