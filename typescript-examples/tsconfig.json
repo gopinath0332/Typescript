@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "outDir": "build",
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
