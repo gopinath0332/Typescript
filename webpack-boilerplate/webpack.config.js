@@ -1,5 +1,5 @@
 var path = require("path");
-
+var webpack = require("webpack");
 var config = {
     entry: ["./src/app.ts"],
     output: {
@@ -17,7 +17,13 @@ var config = {
                 exclude: /node_modules/
            }
          ]
-    }
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin(),
+      new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+  ]
 };
 
 
