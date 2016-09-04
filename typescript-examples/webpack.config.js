@@ -1,5 +1,8 @@
 var path = require("path");
 var webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+
 var config = {
     entry: ["./src/app.ts"],
     output: {
@@ -16,13 +19,14 @@ var config = {
             exclude: /node_modules/
            }, {
             test: /\.css$/,
-            loader: "style!css"
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         }, {
             test: /\.(woff|woff2|eot|ttf|svg)$/,
             loader: 'url'
         }]
     },
     plugins: [new webpack.HotModuleReplacementPlugin(),
+      new ExtractTextPlugin("[name].css"),
       new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
