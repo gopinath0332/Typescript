@@ -5,6 +5,7 @@
         "removeComments": true,
         "moduleResolution": "node",
         "sourceMap": false,
+        "outDir": "build",
         "target": "es5"
     },
     "exclude": [

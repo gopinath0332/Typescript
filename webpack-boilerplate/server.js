@@ -1,5 +1,4 @@
-var liveServer = require("live-server"),
-    webpack = require("webpack"),
+var webpack = require("webpack"),
     webpackDevServer = require("webpack-dev-server"),
     path = require("path");
 var webpackConfig = require("./webpack.config"),
