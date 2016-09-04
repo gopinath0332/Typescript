@@ -1,5 +1,5 @@
 class Hello {
-    name: "";
+    name: string;
     constructor(name) {
         this.name = name;
     }
