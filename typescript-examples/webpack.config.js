@@ -10,13 +10,17 @@ var config = {
         extensions: ["", ".ts", ".tsx", ".js"]
     },
     module: {
-        loaders: [
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader",
-                exclude: /node_modules/
-           }
-         ]
+        loaders: [{
+            test: /\.tsx?$/,
+            loader: "ts-loader",
+            exclude: /node_modules/
+           }, {
+            test: /\.css$/,
+            loader: "style!css"
+        }, {
+            test: /\.(woff|woff2|eot|ttf|svg)$/,
+            loader: 'url'
+        }]
     },
     plugins: [new webpack.HotModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
