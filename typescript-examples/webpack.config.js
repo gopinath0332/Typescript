@@ -4,6 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 var config = {
+    devTool: "eval",
     entry: ["./src/app.ts"],
     output: {
         path: path.resolve(__dirname, "build"),
@@ -17,7 +18,7 @@ var config = {
             test: /\.tsx?$/,
             loader: "ts-loader",
             exclude: /node_modules/
-           }, {
+        }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         }, {
@@ -26,12 +27,12 @@ var config = {
         }]
     },
     plugins: [new webpack.HotModuleReplacementPlugin(),
-      new ExtractTextPlugin("[name].css"),
-      new webpack.ProvidePlugin({
+        new ExtractTextPlugin("[name].css"),
+        new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
         })
-  ]
+    ]
 };
 
 
