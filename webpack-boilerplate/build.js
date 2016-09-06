@@ -2,16 +2,25 @@ var webpack = require("webpack"),
     webpackDevServer = require("webpack-dev-server"),
     path = require("path");
 var webpackConfig = require("./webpack.config"),
-    port = 9090;
+    port = 9091;
 
-
-webpackConfig.entry.unshift("webpack-dev-server/client?http://localhost:" + port, "webpack/hot/dev-server");
-var compiler = webpack(webpackConfig);
+webpackConfig.devTool = "cheap-source-map";
+var uglify = new webpack.optimize.UglifyJsPlugin({
+    sourceMap: false,
+    compress: {
+        warnings: false
+    },
+    output: {
+        comments: false
+    }
+});
+webpackConfig.plugins.push(uglify);
 
 var compiler = webpack(webpackConfig, function(error, status) {
     console.log("App builded in " + (status.endTime - status.startTime) + "ms");
     console.log("App running in " + port);
 });
+
 
 var server = new webpackDevServer(compiler, {
     contentBase: path.join(__dirname),
